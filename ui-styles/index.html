@@ -4,22 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UI Style Gallery — trebuh's blog</title>
-  <meta name="description" content="The same components rendered in seven different UI styles.">
+  <meta name="description" content="The same components rendered in fifteen different UI styles.">
   <link rel="stylesheet" href="/style.css">
   <style>
     .style-grid { list-style: none; margin: 0; padding: 0; }
     .style-grid li {
-      padding: 1.4rem 0;
+      padding: 1.2rem 0;
       border-bottom: 1px solid var(--border);
       display: flex; align-items: baseline; gap: 1.25rem; flex-wrap: wrap;
     }
-    .style-grid h2 { margin: 0; font-size: 1.2rem; min-width: 12rem; }
+    .style-grid h2 { margin: 0; font-size: 1.1rem; min-width: 12rem; }
     .style-grid h2 a { color: var(--text); text-decoration: none; }
     .style-grid h2 a:hover { color: var(--accent); }
-    .style-grid p { margin: 0; color: var(--muted); flex: 1; min-width: 16rem; }
+    .style-grid p { margin: 0; color: var(--muted); flex: 1; min-width: 16rem; font-size: 0.95rem; }
     .swatch {
       display: inline-block; width: 14px; height: 14px; border-radius: 4px;
       margin-right: 0.5rem; vertical-align: -2px;
+    }
+    .style-group {
+      font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); margin: 2.5rem 0 0.5rem;
     }
   </style>
 </head>
@@ -37,8 +41,9 @@
 
   <main class="container">
     <h1>UI Style Gallery</h1>
-    <p class="intro" style="margin-bottom:2rem">The same components — a nav bar, a hero, buttons, and a card — rendered in seven different UI styles. Open them side by side to feel the difference.</p>
+    <p class="intro" style="margin-bottom:2rem">The same components — a nav bar, a hero, buttons, and a card — rendered in fifteen different UI styles. Open them side by side to feel the difference.</p>
 
+    <h2 class="style-group">Modern</h2>
     <ul class="style-grid">
       <li>
         <h2><span class="swatch" style="background:linear-gradient(135deg,#667eea,#f093fb)"></span><a href="/ui-styles/glassmorphism.html">Glassmorphism</a></h2>
@@ -57,16 +62,60 @@
         <p>Typography-driven, generous white space, one accent color.</p>
       </li>
       <li>
-        <h2><span class="swatch" style="background:#0a0a12;box-shadow:0 0 6px #00fff0"></span><a href="/ui-styles/dark-neon.html">Dark Neon</a></h2>
-        <p>Near-black canvas, cyan/magenta glow, gradient headlines.</p>
+        <h2><span class="swatch" style="background:#f3edff;box-shadow:inset 0 -3px 5px rgba(120,90,200,0.3)"></span><a href="/ui-styles/clay.html">Claymorphism</a></h2>
+        <p>Puffy plasticine surfaces, pastel colors, dual inner/outer shadows.</p>
       </li>
       <li>
         <h2><span class="swatch" style="background:linear-gradient(120deg,#6d28d9,#db2777)"></span><a href="/ui-styles/bento.html">Bento Grid</a></h2>
         <p>Rounded tiles of mixed sizes and colors — the Apple-keynote look.</p>
       </li>
       <li>
-        <h2><span class="swatch" style="background:#f3edff;box-shadow:inset 0 -3px 5px rgba(120,90,200,0.3)"></span><a href="/ui-styles/clay.html">Claymorphism</a></h2>
-        <p>Puffy plasticine surfaces, pastel colors, dual inner/outer shadows.</p>
+        <h2><span class="swatch" style="background:#fff5fa;border:2px solid #ffb3d4"></span><a href="/ui-styles/kawaii.html">Kawaii</a></h2>
+        <p>Pastel candy colors, chunky rounded shapes, bouncy soft shadows.</p>
+      </li>
+    </ul>
+
+    <h2 class="style-group">Retro &amp; nostalgic</h2>
+    <ul class="style-grid">
+      <li>
+        <h2><span class="swatch" style="background:#f2e8d5;border:1px solid #b5541c"></span><a href="/ui-styles/retro.html">Retro Vintage</a></h2>
+        <p>Warm paper tones, serif italics, stamp badges — 70s editorial print.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:linear-gradient(to bottom,#fff,#8899aa)"></span><a href="/ui-styles/y2k.html">Y2K</a></h2>
+        <p>Chrome text, icy blues, glossy pills — the turn-of-the-millennium web.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:#12100c;border:1px solid #c9a227"></span><a href="/ui-styles/art-deco.html">Art Deco</a></h2>
+        <p>Gilded geometry, sunburst motifs, 1920s machine-age glamour.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:linear-gradient(to bottom,#ffee32,#ff4fa0)"></span><a href="/ui-styles/synthwave.html">Synthwave</a></h2>
+        <p>Neon sunsets, perspective grids, chrome gradients — the 80s future.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:linear-gradient(to bottom,#9a9a9a,#5a5a5a)"></span><a href="/ui-styles/skeuomorphism.html">Skeuomorphism</a></h2>
+        <p>Real-world textures: linen, glossy buttons, stitched leather. The iOS 6 era.</p>
+      </li>
+    </ul>
+
+    <h2 class="style-group">Dark &amp; edgy</h2>
+    <ul class="style-grid">
+      <li>
+        <h2><span class="swatch" style="background:#0a0a12;box-shadow:0 0 6px #00fff0"></span><a href="/ui-styles/dark-neon.html">Dark Neon</a></h2>
+        <p>Near-black canvas, cyan/magenta glow, gradient headlines.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:#060608;box-shadow:2px 0 0 #ff2a2a,-2px 0 0 #00e5ff"></span><a href="/ui-styles/cyberpunk.html">Cyberpunk</a></h2>
+        <p>Glitch typography, HUD brackets, scanlines, terminal aesthetic.</p>
+      </li>
+    </ul>
+
+    <h2 class="style-group">Anti-design</h2>
+    <ul class="style-grid">
+      <li>
+        <h2><span class="swatch" style="background:#fff;border:1px solid #999"></span><a href="/ui-styles/brutalism.html">Brutalism</a></h2>
+        <p>Raw unstyled HTML. Default fonts, blue links, zero CSS. On purpose.</p>
       </li>
     </ul>
 
