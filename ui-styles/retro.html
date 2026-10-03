@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Vintage — UI Style Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f2e8d5;
+    color: #43332a;
+    padding: 2.5rem 1.5rem;
+    min-height: 100vh;
+    background-image: radial-gradient(rgba(67,51,42,0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  nav {
+    max-width: 720px; margin: 0 auto 4.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 3px double #43332a;
+    border-bottom: 3px double #43332a;
+    padding: 0.9rem 0.25rem;
+  }
+  .logo { font-weight: 700; font-size: 1.15rem; letter-spacing: 3px; text-transform: uppercase; }
+  nav a {
+    color: #43332a; text-decoration: none; margin-left: 1.5rem; font-size: 0.85rem;
+    letter-spacing: 2px; text-transform: uppercase;
+    border-bottom: 1px dotted #43332a;
+  }
+  nav a:hover { color: #b5541c; border-color: #b5541c; }
+  .hero { max-width: 720px; margin: 0 auto; text-align: center; }
+  .kicker {
+    display: inline-block; font-size: 0.78rem; letter-spacing: 4px; text-transform: uppercase;
+    color: #b5541c; border: 1px solid #b5541c; border-radius: 3px;
+    padding: 0.3rem 0.9rem; margin-bottom: 1.5rem;
+    transform: rotate(-1.5deg);
+  }
+  .hero h1 {
+    font-size: 3.2rem; font-style: italic; font-weight: 700;
+    line-height: 1.15; margin-bottom: 1.25rem; color: #43332a;
+  }
+  .hero p { font-size: 1.1rem; font-style: italic; color: #7a6a5a; margin-bottom: 2.5rem; }
+  .btn {
+    display: inline-block; padding: 0.75rem 2rem; margin: 0 0.5rem;
+    text-decoration: none; font-size: 0.88rem; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 700;
+  }
+  .btn-primary {
+    background: #b5541c; color: #f2e8d5;
+    border: 2px solid #43332a;
+    box-shadow: 3px 3px 0 #43332a;
+  }
+  .btn-primary:hover { background: #96430f; transform: translate(1px,1px); box-shadow: 2px 2px 0 #43332a; }
+  .btn-ghost { color: #43332a; border: 2px dashed #43332a; }
+  .btn-ghost:hover { background: rgba(67,51,42,0.07); }
+  .card {
+    max-width: 460px; margin: 4.5rem auto 0; padding: 2rem;
+    background: #faf3e3;
+    border: 1px solid #c9b99a;
+    outline: 4px solid #faf3e3;
+    box-shadow: 0 0 0 5px #43332a, 6px 8px 0 rgba(67,51,42,0.25);
+    transform: rotate(0.6deg);
+  }
+  .tag {
+    display: inline-block; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase;
+    color: #b5541c; margin-bottom: 0.9rem;
+    border-bottom: 2px solid #b5541c; padding-bottom: 0.2rem;
+  }
+  .card h3 { font-size: 1.45rem; font-style: italic; margin-bottom: 0.6rem; }
+  .card p { color: #6a5a4a; line-height: 1.7; margin-bottom: 1.25rem; font-size: 0.97rem; }
+  .card a { color: #b5541c; font-weight: 700; letter-spacing: 1px; }
+  .badge {
+    position: fixed; bottom: 1.25rem; left: 1.25rem;
+    background: #43332a; color: #f2e8d5;
+    padding: 0.5rem 1rem; font-size: 0.85rem; font-family: Georgia, serif;
+    letter-spacing: 1px;
+  }
+  .badge a { color: #f0b27a; }
+</style>
+</head>
+<body>
+  <nav>
+    <span class="logo">Style.Demo</span>
+    <div>
+      <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <span class="kicker">Est. 1974 — Handcrafted</span>
+    <h1>Design that speaks</h1>
+    <p>Warm paper tones, serif italics, stamp-like badges. Vintage print design brought to the screen.</p>
+    <a href="#" class="btn btn-primary">Get started</a>
+    <a href="#" class="btn btn-ghost">Learn more</a>
+  </section>
+
+  <div class="card">
+    <span class="tag">Featured</span>
+    <h3>Analog warmth</h3>
+    <p>Retro design borrows from letterpress posters and 70s editorial: cream backgrounds, burnt orange, double rules, and slightly imperfect, hand-placed elements.</p>
+    <a href="#">Read more →</a>
+  </div>
+
+  <div class="badge">🎨 Retro Vintage · <a href="/ui-styles/">all styles</a></div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synthwave — UI Style Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0b0221;
+    color: #e8d8ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  /* starfield */
+  body::before {
+    content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 15% 25%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 65% 15%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 85% 40%, #ffd6f5 50%, transparent 51%),
+      radial-gradient(1px 1px at 35% 60%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 50% 10%, #a8e8ff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 90% 70%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 8% 75%, #ffd6f5 50%, transparent 51%);
+  }
+  .sun {
+    position: fixed; top: 6rem; left: 50%; transform: translateX(-50%);
+    width: 260px; height: 260px; border-radius: 50%;
+    background: linear-gradient(to bottom, #ffee32 0%, #ff9a3d 30%, #ff4fa0 60%, #b04fff 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 55%), repeating-linear-gradient(to bottom, #000 0 14px, transparent 14px 20px);
+    -webkit-mask-composite: source-over;
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 55%);
+    box-shadow: 0 0 80px rgba(255,79,160,0.5);
+    z-index: 0;
+  }
+  /* grid floor */
+  .grid {
+    position: fixed; left: -50%; right: -50%; bottom: -10%; height: 45vh; z-index: 0;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,79,160,0.55) 0 2px, transparent 2px 60px),
+      repeating-linear-gradient(0deg, rgba(255,79,160,0.55) 0 2px, transparent 2px 44px);
+    transform: perspective(300px) rotateX(62deg);
+    transform-origin: top center;
+  }
+  .content { position: relative; z-index: 1; padding: 2rem 1.5rem; }
+  nav {
+    max-width: 740px; margin: 0 auto 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-weight: 800; font-size: 1.15rem; letter-spacing: 4px;
+    color: #a8e8ff;
+    text-shadow: 0 0 14px rgba(0,229,255,0.8), 0 0 30px rgba(0,229,255,0.4);
+  }
+  nav a {
+    color: #e8a8d8; text-decoration: none; margin-left: 1.5rem; font-size: 0.85rem;
+    letter-spacing: 2px; text-transform: uppercase; font-weight: 700;
+    text-shadow: 0 0 10px rgba(255,79,160,0.7);
+  }
+  nav a:hover { color: #fff; }
+  .hero { max-width: 740px; margin: 0 auto; text-align: center; }
+  .hero h1 {
+    font-size: 3.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;
+    line-height: 1.1; margin-bottom: 1.25rem;
+    background: linear-gradient(to bottom, #ffffff 10%, #a8e8ff 40%, #ff4fa0 75%, #b04fff 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 22px rgba(255,79,160,0.55));
+  }
+  .hero p { font-size: 1.05rem; color: #c9a8e8; margin-bottom: 2.5rem; text-shadow: 0 0 8px rgba(176,79,255,0.5); }
+  .btn {
+    display: inline-block; padding: 0.85rem 2.3rem; border-radius: 6px;
+    text-decoration: none; font-weight: 800; font-size: 0.88rem;
+    text-transform: uppercase; letter-spacing: 2px; margin: 0 0.5rem;
+  }
+  .btn-primary {
+    background: linear-gradient(to right, #ff4fa0, #b04fff);
+    color: #fff;
+    box-shadow: 0 0 24px rgba(255,79,160,0.55), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .btn-primary:hover { box-shadow: 0 0 36px rgba(255,79,160,0.8); }
+  .btn-ghost {
+    color: #a8e8ff;
+    box-shadow: inset 0 0 0 1px #a8e8ff, 0 0 16px rgba(0,229,255,0.3);
+    background: rgba(10,2,33,0.5);
+  }
+  .btn-ghost:hover { background: rgba(0,229,255,0.12); }
+  .card {
+    max-width: 440px; margin: 5rem auto 0; padding: 2rem;
+    background: rgba(20,8,48,0.75);
+    border: 1px solid rgba(255,79,160,0.5);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(176,79,255,0.25), inset 0 0 30px rgba(176,79,255,0.08);
+    backdrop-filter: blur(4px);
+  }
+  .tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 800; letter-spacing: 3px;
+    text-transform: uppercase; color: #ffee32;
+    text-shadow: 0 0 10px rgba(255,238,50,0.8);
+    margin-bottom: 1rem;
+  }
+  .card h3 {
+    font-size: 1.35rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem;
+    color: #ffd6f5; text-shadow: 0 0 12px rgba(255,79,160,0.6);
+  }
+  .card p { color: #b89ad8; line-height: 1.65; margin-bottom: 1.25rem; font-size: 0.95rem; }
+  .card a { color: #a8e8ff; font-weight: 700; text-decoration: none; text-shadow: 0 0 8px rgba(0,229,255,0.6); }
+  .badge {
+    position: fixed; bottom: 1.25rem; left: 1.25rem; z-index: 60;
+    background: rgba(20,8,48,0.9); color: #e8d8ff;
+    border: 1px solid rgba(255,79,160,0.5);
+    padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.85rem;
+  }
+  .badge a { color: #ff9ad0; }
+</style>
+</head>
+<body>
+  <div class="sun"></div>
+  <div class="grid"></div>
+
+  <div class="content">
+    <nav>
+      <span class="logo">STYLE.DEMO</span>
+      <div>
+        <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>Design that speaks</h1>
+      <p>Neon sunsets, chrome gradients, infinite perspective grids. Synthwave is the 80s dream of the future, rendered in pink and cyan.</p>
+      <a href="#" class="btn btn-primary">Get started</a>
+      <a href="#" class="btn btn-ghost">Learn more</a>
+    </section>
+
+    <div class="card">
+      <span class="tag">◢ Featured</span>
+      <h3>Retro-futurism</h3>
+      <p>Synthwave (a cousin of retrowave and vaporwave) layers striped suns, glowing grids, and airbrushed gradients. Nostalgia for a future that never happened.</p>
+      <a href="#">Read more →</a>
+    </div>
+  </div>
+
+  <div class="badge">🎨 Synthwave · <a href="/ui-styles/">all styles</a></div>
+</body>
+</html>

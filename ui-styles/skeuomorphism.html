@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skeuomorphism — UI Style Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.025) 0 2px, transparent 2px 4px),
+      #e5e0d8;
+    color: #333;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+  }
+  nav {
+    max-width: 740px; margin: 0 auto 4rem;
+    background: linear-gradient(to bottom, #6b6b6b, #3f3f3f);
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 2px 6px rgba(0,0,0,0.4);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 1rem;
+  }
+  .logo {
+    color: #fff; font-weight: 700; font-size: 1.05rem;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.7);
+    padding: 0.35rem 1rem;
+  }
+  nav a {
+    color: #fff; text-decoration: none; font-size: 0.82rem; font-weight: 600;
+    margin-left: 0.4rem; padding: 0.35rem 0.9rem; border-radius: 8px;
+    background: linear-gradient(to bottom, #9a9a9a 0%, #6e6e6e 50%, #5a5a5a 50%, #7d7d7d 100%);
+    border: 1px solid #3a3a3a;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.4);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.5);
+  }
+  nav a:hover { background: linear-gradient(to bottom, #b0b0b0, #848484 50%, #707070 50%, #939393); }
+  nav a:active { box-shadow: inset 0 2px 4px rgba(0,0,0,0.4); }
+  .hero { max-width: 740px; margin: 0 auto; text-align: center; }
+  .hero h1 {
+    font-size: 2.9rem; color: #3d3d3d; font-weight: 700; letter-spacing: -1px;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.9), 0 -1px 1px rgba(0,0,0,0.15);
+  }
+  .hero p { font-size: 1.1rem; color: #6a655c; margin-bottom: 2.5rem; }
+  .btn {
+    display: inline-block; padding: 0.8rem 2.2rem; border-radius: 10px;
+    text-decoration: none; font-weight: 700; font-size: 0.95rem; color: #fff;
+    margin: 0 0.5rem;
+    background: linear-gradient(to bottom, #7bb2f0 0%, #3d7bd8 50%, #2f66c4 50%, #4a83dd 100%);
+    border: 1px solid #2456a8;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 3px 8px rgba(0,0,0,0.35);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.35);
+  }
+  .btn:hover { background: linear-gradient(to bottom, #8fc0f5, #4d89de 50%, #3d74cb 50%, #5b92e4); }
+  .btn:active { box-shadow: inset 0 2px 5px rgba(0,0,0,0.35); }
+  .btn-ghost {
+    background: linear-gradient(to bottom, #fdfdfb, #e8e5de 50%, #dcd8cf 50%, #e9e6df);
+    color: #4a463e; border-color: #b5b0a5;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  }
+  .card {
+    max-width: 440px; margin: 4rem auto 0; padding: 1.9rem;
+    background: linear-gradient(to bottom, #fffef9, #f4f1e9);
+    border-radius: 14px;
+    border: 1px solid #c9c4b8;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 10px 24px rgba(0,0,0,0.28), 0 2px 5px rgba(0,0,0,0.2);
+  }
+  .tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700;
+    color: #fff; padding: 0.3rem 0.85rem; border-radius: 20px;
+    background: linear-gradient(to bottom, #b3b3b3, #8a8a8a);
+    border: 1px solid #6e6e6e;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+    margin-bottom: 1rem; text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+  }
+  .card h3 { font-size: 1.35rem; color: #3d3d3d; margin-bottom: 0.6rem; }
+  .card p { color: #6a655c; line-height: 1.65; margin-bottom: 1.25rem; }
+  .card a { color: #2f66c4; font-weight: 700; text-decoration: none; }
+  .badge {
+    position: fixed; bottom: 1.25rem; left: 1.25rem;
+    background: linear-gradient(to bottom, #555, #333);
+    color: #fff; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.85rem;
+    border: 1px solid #222; box-shadow: 0 2px 5px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .badge a { color: #9fc3f5; }
+</style>
+</head>
+<body>
+  <nav>
+    <span class="logo">STYLE.DEMO</span>
+    <div>
+      <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Design that speaks</h1>
+    <p>Skeuomorphism: interfaces that imitate physical objects — linen textures, glossy buttons, stitched leather. The iOS 6 era.</p>
+    <a href="#" class="btn">Get started</a>
+    <a href="#" class="btn btn-ghost">Learn more</a>
+  </section>
+
+  <div class="card">
+    <span class="tag">Featured</span>
+    <h3>Real-world metaphors</h3>
+    <p>Every element looks touchable: buttons have glossy highlights, panels cast real shadows, textures mimic fabric and paper. Familiar, tactile — and heavy.</p>
+    <a href="#">Read more →</a>
+  </div>
+
+  <div class="badge">🎨 Skeuomorphism · <a href="/ui-styles/">all styles</a></div>
+</body>
+</html>

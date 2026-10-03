@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kawaii — UI Style Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Arial Rounded MT Bold', 'Trebuchet MS', Verdana, sans-serif;
+    background: #fff5fa;
+    color: #6b5560;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+  }
+  nav {
+    max-width: 720px; margin: 0 auto 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    padding: 0.8rem 1.6rem;
+    box-shadow: 0 6px 0 #ffd6e8, 0 10px 24px rgba(255,150,190,0.25);
+    border: 2px solid #ffe3f0;
+  }
+  .logo { font-weight: 800; font-size: 1.1rem; color: #ff7eb0; }
+  nav a { color: #b09aa5; text-decoration: none; margin-left: 1.5rem; font-size: 0.88rem; font-weight: 700; }
+  nav a:hover { color: #ff7eb0; }
+  .hero { max-width: 720px; margin: 0 auto; text-align: center; }
+  .hero h1 {
+    font-size: 2.9rem; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2;
+    margin-bottom: 1.25rem; color: #ff9ec7;
+    text-shadow: 2px 2px 0 #ffe3f0;
+  }
+  .hero p { font-size: 1.05rem; color: #b09aa5; margin-bottom: 2.5rem; }
+  .btn {
+    display: inline-block; padding: 0.9rem 2.2rem; border-radius: 50px;
+    text-decoration: none; font-weight: 800; font-size: 0.92rem; margin: 0 0.5rem;
+    border: 2px solid #fff;
+    transition: transform 0.15s;
+  }
+  .btn:hover { transform: translateY(-3px) rotate(-1deg); }
+  .btn-primary {
+    background: linear-gradient(135deg, #ffb3d4, #ff7eb0);
+    color: #fff;
+    box-shadow: 0 5px 0 #e56a9e, 0 10px 20px rgba(255,126,176,0.35);
+  }
+  .btn-primary:hover { box-shadow: 0 8px 0 #e56a9e, 0 14px 24px rgba(255,126,176,0.4); }
+  .btn-mint {
+    background: linear-gradient(135deg, #c8f5e0, #8fe3c0);
+    color: #3a8a6a;
+    box-shadow: 0 5px 0 #6cc9a5, 0 10px 20px rgba(110,200,165,0.3);
+  }
+  .card {
+    max-width: 430px; margin: 4rem auto 0; padding: 2rem;
+    background: #fff;
+    border-radius: 32px;
+    border: 2px solid #ffe3f0;
+    box-shadow: 0 8px 0 #ffe3f0, 0 16px 32px rgba(255,150,190,0.2);
+  }
+  .tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 1px;
+    background: #fff3c8; color: #d8a020;
+    padding: 0.35rem 0.95rem; border-radius: 40px; margin-bottom: 1rem;
+    border: 2px dashed #ffe08a;
+  }
+  .card h3 { font-size: 1.3rem; color: #ff7eb0; margin-bottom: 0.6rem; }
+  .card p { color: #b09aa5; line-height: 1.7; margin-bottom: 1.25rem; font-size: 0.95rem; }
+  .card a { color: #ff7eb0; font-weight: 800; text-decoration: none; }
+  .candy {
+    display: flex; gap: 0.6rem; justify-content: center; margin-top: 2.5rem;
+  }
+  .candy span {
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 3px 8px rgba(200,120,160,0.25);
+  }
+  .badge {
+    position: fixed; bottom: 1.25rem; left: 1.25rem;
+    background: #fff; color: #6b5560;
+    border: 2px solid #ffe3f0; border-radius: 40px;
+    padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700;
+    box-shadow: 0 4px 0 #ffe3f0;
+  }
+  .badge a { color: #ff7eb0; }
+</style>
+</head>
+<body>
+  <nav>
+    <span class="logo">♡ STYLE.DEMO ♡</span>
+    <div>
+      <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Design that speaks ♡</h1>
+    <p>Pastel candy colors, chunky rounded shapes, bouncy shadows. Kawaii UI wants to be your friend.</p>
+    <a href="#" class="btn btn-primary">Get started ♡</a>
+    <a href="#" class="btn btn-mint">Learn more ✿</a>
+    <div class="candy">
+      <span style="background:#ffb3d4"></span>
+      <span style="background:#c8f5e0"></span>
+      <span style="background:#d8ccff"></span>
+      <span style="background:#ffe3a8"></span>
+    </div>
+  </section>
+
+  <div class="card">
+    <span class="tag">✿ Featured</span>
+    <h3>Sweet &amp; soft</h3>
+    <p>Kawaii ("cute" in Japanese) design uses pink-mint-lavender palettes, oversized border radii, dashed details, and friendly copy. Popular for lifestyle apps and shops.</p>
+    <a href="#">Read more →</a>
+  </div>
+
+  <div class="badge">🎨 Kawaii · <a href="/ui-styles/">all styles</a></div>
+</body>
+</html>
