@@ -3,82 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neubrutalism — UI Style Demo</title>
+<title>Neubrutalism — Pulse · SaaS Landing</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink: #0f0f0f; --yellow: #ffde59; --pink: #ff90e8; --blue: #a0c4ff; --green: #00e5a0; --paper: #f5f0e8; }
   body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f0e8;
-    color: #0f0f0f;
-    padding: 2rem 1.5rem;
+    background: var(--paper); color: var(--ink);
+    border: 4px solid var(--ink);
   }
-  .brutal { border: 3px solid #0f0f0f; box-shadow: 6px 6px 0 #0f0f0f; }
-  nav {
-    max-width: 760px; margin: 0 auto 4rem;
-    display: flex; justify-content: space-between; align-items: center;
-    background: #ffde59; padding: 1rem 1.5rem;
-  }
-  .logo { font-weight: 900; font-size: 1.2rem; text-transform: uppercase; }
-  nav a { color: #0f0f0f; text-decoration: none; margin-left: 1.25rem; font-weight: 700; }
-  nav a:hover { background: #0f0f0f; color: #ffde59; padding: 2px 4px; }
-  .hero { max-width: 760px; margin: 0 auto; }
-  .hero h1 {
-    font-size: 3.5rem; font-weight: 900; text-transform: uppercase;
-    line-height: 1.05; margin-bottom: 1.5rem;
-    background: #ff90e8; display: inline; padding: 0 0.75rem;
-    box-decoration-break: clone; -webkit-box-decoration-break: clone;
-    border: 3px solid #0f0f0f; box-shadow: 6px 6px 0 #0f0f0f;
-  }
-  .hero p { font-size: 1.15rem; font-weight: 600; margin: 1.75rem 0 2.25rem; max-width: 34rem; }
+  .brutal { border: 3px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); background: #fff; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+  nav { margin: 1.5rem 0 3rem; padding: 0.9rem 1.4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .logo { font-weight: 900; font-size: 1.3rem; text-transform: uppercase; display: flex; align-items: center; gap: 0.5rem; }
+  .logo i { width: 22px; height: 22px; background: var(--pink); border: 3px solid var(--ink); display: inline-block; transform: rotate(8deg); }
+  .nav-links a { color: var(--ink); text-decoration: none; font-weight: 700; margin-left: 1.4rem; font-size: 0.95rem; }
+  .nav-links a:hover { background: var(--yellow); padding: 2px 4px; }
   .btn {
-    display: inline-block; padding: 0.9rem 2rem; font-weight: 900; font-size: 1rem;
+    display: inline-block; padding: 0.85rem 1.7rem; font-weight: 900; font-size: 0.95rem;
     text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
-    border: 3px solid #0f0f0f; box-shadow: 5px 5px 0 #0f0f0f; margin-right: 1rem; margin-bottom: 1rem;
+    border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--ink); background: #fff; color: var(--ink);
   }
-  .btn:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 #0f0f0f; }
-  .btn-primary { background: #0f0f0f; color: #fff; }
-  .btn-secondary { background: #00e5a0; color: #0f0f0f; }
-  .card {
-    max-width: 460px; margin: 4rem auto 0; padding: 1.75rem;
-    background: #fff;
+  .btn:hover { transform: translate(3px,3px); box-shadow: 2px 2px 0 var(--ink); }
+  .btn-yellow { background: var(--yellow); }
+  .btn-green { background: var(--green); }
+  .btn-dark { background: var(--ink); color: #fff; }
+
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; padding: 3rem 0 4rem; }
+  .pill {
+    display: inline-block; font-size: 0.78rem; font-weight: 900; text-transform: uppercase;
+    background: var(--pink); border: 2px solid var(--ink); padding: 0.35rem 0.8rem;
+    box-shadow: 3px 3px 0 var(--ink); margin-bottom: 1.5rem; transform: rotate(-1.5deg);
   }
-  .tag {
-    display: inline-block; font-size: 0.75rem; font-weight: 900; text-transform: uppercase;
-    background: #a0c4ff; border: 2px solid #0f0f0f; padding: 0.25rem 0.7rem; margin-bottom: 1rem;
-  }
-  .card h3 { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 0.75rem; }
-  .card p { font-weight: 600; line-height: 1.6; margin-bottom: 1.25rem; }
-  .card a { color: #0f0f0f; font-weight: 900; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(2.4rem, 4.6vw, 3.6rem); font-weight: 900; text-transform: uppercase; line-height: 1.02; letter-spacing: -1px; margin-bottom: 1.3rem; }
+  .hero h1 mark { background: var(--yellow); padding: 0 0.4rem; border: 3px solid var(--ink); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .hero p.sub { font-size: 1.08rem; font-weight: 600; line-height: 1.6; margin-bottom: 1.8rem; max-width: 44ch; }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .hero-note { font-size: 0.82rem; font-weight: 700; }
+
+  .mockup { padding: 1rem; transform: rotate(1deg); }
+  .browser-bar { display: flex; gap: 6px; margin-bottom: 0.9rem; }
+  .browser-bar span { width: 12px; height: 12px; border: 2px solid var(--ink); }
+  .browser-bar span:nth-child(1){background:var(--pink)} .browser-bar span:nth-child(2){background:var(--yellow)} .browser-bar span:nth-child(3){background:var(--green)}
+  .dash { display: grid; grid-template-columns: 110px 1fr; gap: 0.8rem; }
+  .side { border: 2px solid var(--ink); padding: 0.6rem; display: flex; flex-direction: column; gap: 0.35rem; background: var(--paper); }
+  .side a { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--ink); text-decoration: none; padding: 0.3rem 0.5rem; border: 2px solid transparent; }
+  .side a.on { background: var(--blue); border-color: var(--ink); }
+  .main { display: flex; flex-direction: column; gap: 0.8rem; }
+  .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.6rem; }
+  .stat { border: 2px solid var(--ink); padding: 0.55rem 0.7rem; font-size: 0.8rem; font-weight: 800; background: #fff; }
+  .stat b { display: block; font-size: 1rem; }
+  .stat .up { color: #0a8a5f; font-size: 0.7rem; }
+  .chart { border: 2px solid var(--ink); padding: 0.7rem; background: #fff; }
+  .chart small { font-weight: 800; text-transform: uppercase; font-size: 0.65rem; }
+  .bars { display: flex; align-items: flex-end; gap: 5px; height: 74px; margin-top: 0.5rem; }
+  .bars i { flex: 1; background: var(--yellow); border: 2px solid var(--ink); }
+  .bars i:nth-child(even){ background: var(--pink); }
+
+  .logos { border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); padding: 1.6rem 0; margin-bottom: 4rem; }
+  .logos p { text-align: center; font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.2rem; }
+  .logos-row { display: flex; flex-wrap: wrap; gap: 2.4rem; justify-content: center; font-weight: 900; font-size: 1.05rem; text-transform: uppercase; }
+
+  .features { padding-bottom: 4rem; }
+  .features .head { max-width: 40ch; margin-bottom: 2.5rem; }
+  .kicker { display: inline-block; font-size: 0.75rem; font-weight: 900; text-transform: uppercase; background: var(--green); border: 2px solid var(--ink); padding: 0.3rem 0.75rem; box-shadow: 3px 3px 0 var(--ink); margin-bottom: 1.2rem; }
+  .features h2 { font-size: 2.2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; margin-bottom: 0.7rem; }
+  .features .lead { font-weight: 600; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1.4rem; }
+  .card { padding: 1.6rem; transition: transform .15s, box-shadow .15s; }
+  .card:hover { transform: translate(4px,4px); box-shadow: 3px 3px 0 var(--ink); }
+  .icon { width: 46px; height: 46px; border: 3px solid var(--ink); display: grid; place-items: center; font-size: 1.2rem; margin-bottom: 1.1rem; box-shadow: 3px 3px 0 var(--ink); }
+  .card:nth-child(1) .icon { background: var(--yellow); }
+  .card:nth-child(2) .icon { background: var(--pink); }
+  .card:nth-child(3) .icon { background: var(--blue); }
+  .card h3 { font-size: 1.15rem; font-weight: 900; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .card p { font-size: 0.9rem; font-weight: 600; line-height: 1.6; }
+
+  .band { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 1.2rem; margin-bottom: 4rem; }
+  .band div { border: 3px solid var(--ink); background: var(--ink); color: #fff; text-align: center; padding: 1.3rem 0.8rem; box-shadow: 7px 7px 0 rgba(15,15,15,0.25); }
+  .band b { display: block; font-size: 1.6rem; font-weight: 900; color: var(--yellow); }
+  .band span { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+  .cta { background: var(--yellow); text-align: center; padding: 3rem 2rem; margin-bottom: 4rem; }
+  .cta h2 { font-size: 2.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; margin-bottom: 0.7rem; }
+  .cta p { font-weight: 700; margin-bottom: 1.7rem; }
+
+  footer { border-top: 4px solid var(--ink); padding: 3rem 0 2rem; }
+  .foot-grid { display: grid; grid-template-columns: 2fr repeat(3,1fr); gap: 2rem; margin-bottom: 2.5rem; }
+  .foot-grid h4 { font-size: 0.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.9rem; }
+  .foot-grid a { display: block; color: var(--ink); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .foot-grid a:hover { text-decoration: underline 3px; }
+  .foot-brand p { font-size: 0.85rem; font-weight: 600; max-width: 26ch; margin-top: 0.5rem; }
+  .foot-bottom { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; border-top: 2px dashed var(--ink); padding-top: 1.3rem; flex-wrap: wrap; gap: 0.5rem; }
+
   .badge {
-    position: fixed; bottom: 1.25rem; left: 1.25rem;
-    background: #0f0f0f; color: #ffde59; border: 3px solid #0f0f0f;
-    padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700;
+    position: fixed; bottom: 1.25rem; left: 1.25rem; z-index: 60;
+    background: var(--ink); color: var(--yellow); padding: 0.5rem 1rem;
+    font-size: 0.85rem; font-weight: 700; border: 2px solid var(--yellow);
   }
-  .badge a { color: #ffde59; }
+  .badge a { color: var(--pink); }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
-  <nav class="brutal">
-    <span class="logo">STYLE.DEMO</span>
-    <div>
-      <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
-    </div>
-  </nav>
+  <div class="wrap">
+    <nav class="brutal">
+      <span class="logo"><i></i>Pulse</span>
+      <div class="nav-links">
+        <a href="#">Product</a><a href="#">Pricing</a><a href="#">Docs</a><a href="#">Blog</a>
+      </div>
+      <a class="btn btn-dark" href="#">Start free</a>
+    </nav>
 
-  <section class="hero">
-    <h1>Design that speaks</h1>
-    <p>Thick borders, hard shadows, raw colors. Neubrutalism says: no gradients, no subtlety, no apologies.</p>
-    <a href="#" class="btn btn-primary">Get started</a>
-    <a href="#" class="btn btn-secondary">Learn more</a>
-  </section>
+    <header class="hero">
+      <div>
+        <span class="pill">★ New — AI insights are live</span>
+        <h1>Analytics that <mark>thinks ahead</mark></h1>
+        <p class="sub">Pulse turns raw product events into clear answers. See who converts, who churns, and why — without writing SQL.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-yellow" href="#">Start free trial</a>
+          <a class="btn" href="#">Book a demo</a>
+        </div>
+        <p class="hero-note">✔ 14-day free trial &nbsp; ✔ No credit card</p>
+      </div>
+      <div class="mockup brutal">
+        <div class="browser-bar"><span></span><span></span><span></span></div>
+        <div class="dash">
+          <div class="side">
+            <a class="on" href="#">Overview</a><a href="#">Funnels</a><a href="#">Retention</a><a href="#">Users</a>
+          </div>
+          <div class="main">
+            <div class="stats">
+              <div class="stat">$48.2k<b>MRR</b><span class="up">▲ 12%</span></div>
+              <div class="stat">8,421<b>Users</b><span class="up">▲ 8%</span></div>
+              <div class="stat">2.1%<b>Churn</b><span class="up">▼ 0.4%</span></div>
+            </div>
+            <div class="chart">
+              <small>Weekly actives</small>
+              <div class="bars">
+                <i style="height:35%"></i><i style="height:50%"></i><i style="height:42%"></i><i style="height:64%"></i><i style="height:55%"></i><i style="height:72%"></i><i style="height:66%"></i><i style="height:84%"></i><i style="height:78%"></i><i style="height:95%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-  <div class="card brutal">
-    <span class="tag">Featured</span>
-    <h3>Hard edges</h3>
-    <p>Offset block shadows and high-contrast color blocks give every element physical, sticker-like presence. Very trendy for indie hacker and startup sites.</p>
-    <a href="#">Read more →</a>
+    <section class="logos">
+      <p>Trusted by teams at</p>
+      <div class="logos-row"><span>◆ Northloop</span><span>▲ Kite</span><span>● Vantar</span><span>■ Dovetail</span><span>✦ Orbital</span></div>
+    </section>
+
+    <section class="features">
+      <div class="head">
+        <span class="kicker">Features</span>
+        <h2>Everything you need to grow</h2>
+        <p class="lead">From first event to board-ready report — Pulse covers the whole workflow.</p>
+      </div>
+      <div class="cards">
+        <div class="card brutal">
+          <div class="icon">⚡</div>
+          <h3>Real-time funnels</h3>
+          <p>Watch conversion drop off as it happens. Segment by plan, platform, or any custom property.</p>
+        </div>
+        <div class="card brutal">
+          <div class="icon">✦</div>
+          <h3>AI insights</h3>
+          <p>Pulse surfaces the anomalies worth your attention — spikes, dips, odd cohorts.</p>
+        </div>
+        <div class="card brutal">
+          <div class="icon">⌘</div>
+          <h3>SQL when you want</h3>
+          <p>Full raw-event access. Point Pulse at Snowflake, BigQuery, or Postgres.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div><b>12,000+</b><span>teams on Pulse</span></div>
+      <div><b>99.99%</b><span>uptime SLA</span></div>
+      <div><b>4.9/5</b><span>G2 rating</span></div>
+      <div><b>38%</b><span>avg. lift</span></div>
+    </section>
+
+    <section class="cta brutal">
+      <h2>Start seeing clearly</h2>
+      <p>Connect your first data source in under five minutes.</p>
+      <a class="btn btn-dark" href="#">Start free trial →</a>
+    </section>
+
+    <footer>
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <span class="logo"><i></i>Pulse</span>
+          <p>Customer analytics for teams that ship fast.</p>
+        </div>
+        <div><h4>Product</h4><a href="#">Funnels</a><a href="#">Retention</a><a href="#">AI Insights</a><a href="#">Integrations</a></div>
+        <div><h4>Company</h4><a href="#">About</a><a href="#">Careers</a><a href="#">Blog</a><a href="#">Press</a></div>
+        <div><h4>Resources</h4><a href="#">Docs</a><a href="#">API</a><a href="#">Status</a><a href="#">Community</a></div>
+      </div>
+      <div class="foot-bottom"><span>© 2026 Pulse Labs</span><span>Privacy · Terms · Security</span></div>
+    </footer>
   </div>
 
-  <div class="badge">🎨 Neubrutalism · <a href="/ui-styles/">all styles</a></div>
+  <div class="badge">🎨 Neubrutalism SaaS · <a href="/ui-styles/">all styles</a></div>
 </body>
 </html>
