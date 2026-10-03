@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How this site works — trebuh's blog</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="/">trebuh's blog</a>
+      <nav class="site-nav">
+        <a href="/">Posts</a>
+        <a href="/about.html">About</a>
+        <a href="https://github.com/grsh50" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <h1>How this site works: plain HTML on GitHub Pages</h1>
+      <p class="post-meta">September 30, 2026</p>
+
+      <p>This site has no framework, no build step, and no CMS. It's a folder of hand-written files, and I think that's a feature.</p>
+
+      <h2>The stack</h2>
+      <ul>
+        <li><strong>HTML</strong> — each page and post is one <code>.html</code> file.</li>
+        <li><strong>CSS</strong> — a single <code>style.css</code> shared by every page.</li>
+        <li><strong>GitHub Pages</strong> — the repo is named <code>grsh50.github.io</code>, so GitHub serves the files on the <code>main</code> branch as a website at the matching URL.</li>
+      </ul>
+
+      <h2>Why no generator?</h2>
+      <p>Static site generators are great, but for a personal blog they add a layer I'd have to maintain: dependencies, themes, build configs, upgrade churn. With plain files, the site I edit is the site that ships. There's nothing to break and nothing to update except my own words.</p>
+
+      <h2>The publishing workflow</h2>
+      <p>Writing a new post means:</p>
+      <ul>
+        <li>Creating a new <code>.html</code> file under <code>posts/</code>.</li>
+        <li>Adding one entry to the list on <code>index.html</code>.</li>
+        <li>Committing and pushing.</li>
+      </ul>
+      <p>GitHub Pages picks up the push and the post is live within a minute. That's the entire pipeline.</p>
+
+      <a class="back-link" href="/">&larr; All posts</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built with plain HTML &amp; CSS · Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></p>
+    </div>
+  </footer>
+</body>
+</html>
