@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glassmorphism — UI Style Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    color: #fff;
+    padding: 2rem 1.5rem;
+  }
+  .glass {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+  }
+  nav.glass {
+    max-width: 720px; margin: 0 auto 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.75rem;
+  }
+  .logo { font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5px; }
+  nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 1.5rem; font-size: 0.95rem; }
+  nav a:hover { color: #fff; }
+  .hero { max-width: 720px; margin: 0 auto; text-align: center; }
+  .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; margin-bottom: 1rem; }
+  .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 2.25rem; }
+  .btn {
+    display: inline-block; padding: 0.85rem 2rem; border-radius: 50px;
+    text-decoration: none; font-weight: 600; font-size: 0.95rem; margin: 0 0.4rem;
+  }
+  .btn-primary { background: rgba(255,255,255,0.92); color: #764ba2; }
+  .btn-primary:hover { background: #fff; }
+  .btn-ghost { border: 1px solid rgba(255,255,255,0.5); color: #fff; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+  .card.glass { max-width: 420px; margin: 4rem auto 0; padding: 2rem; text-align: left; }
+  .tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 50px;
+    background: rgba(255,255,255,0.2); margin-bottom: 1rem;
+  }
+  .card h3 { font-size: 1.35rem; margin-bottom: 0.6rem; }
+  .card p { color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1.25rem; }
+  .card a { color: #fff; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.5); }
+  .badge {
+    position: fixed; bottom: 1.25rem; left: 1.25rem;
+    background: rgba(0,0,0,0.45); color: #fff; backdrop-filter: blur(8px);
+    padding: 0.5rem 1rem; border-radius: 10px; font-size: 0.85rem;
+  }
+  .badge a { color: #fff; }
+</style>
+</head>
+<body>
+  <nav class="glass">
+    <span class="logo">STYLE.DEMO</span>
+    <div>
+      <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Design that speaks</h1>
+    <p>Frosted glass panels floating over vivid gradients. Depth through blur, not shadows.</p>
+    <a href="#" class="btn btn-primary">Get started</a>
+    <a href="#" class="btn btn-ghost">Learn more</a>
+  </section>
+
+  <div class="card glass">
+    <span class="tag">Featured</span>
+    <h3>Frosted panels</h3>
+    <p>Glassmorphism uses translucency and backdrop blur to create a sense of layered depth. Best on colorful, gradient backgrounds.</p>
+    <a href="#">Read more →</a>
+  </div>
+
+  <div class="badge">🎨 Glassmorphism · <a href="/ui-styles/">all styles</a></div>
+</body>
+</html>

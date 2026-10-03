@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Neon — UI Style Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0a0a12;
+    color: #e8e8f0;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+  }
+  nav {
+    max-width: 760px; margin: 0 auto 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border: 1px solid rgba(0,255,240,0.35);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 0 20px rgba(0,255,240,0.15), inset 0 0 20px rgba(0,255,240,0.05);
+  }
+  .logo {
+    font-weight: 800; font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase;
+    color: #00fff0;
+    text-shadow: 0 0 12px rgba(0,255,240,0.7);
+  }
+  nav a { color: #b8b8d0; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
+  nav a:hover { color: #ff2fd6; text-shadow: 0 0 10px rgba(255,47,214,0.8); }
+  .hero { max-width: 760px; margin: 0 auto; text-align: center; }
+  .hero h1 {
+    font-size: 3.25rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.25rem; letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #00fff0, #ff2fd6);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 18px rgba(0,255,240,0.35));
+  }
+  .hero p { font-size: 1.1rem; color: #9090b0; margin-bottom: 2.5rem; }
+  .btn {
+    display: inline-block; padding: 0.85rem 2.25rem; border-radius: 8px;
+    text-decoration: none; font-weight: 700; font-size: 0.9rem;
+    text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0.5rem;
+  }
+  .btn-primary {
+    background: transparent; color: #00fff0;
+    border: 1px solid #00fff0;
+    box-shadow: 0 0 15px rgba(0,255,240,0.35), inset 0 0 15px rgba(0,255,240,0.1);
+  }
+  .btn-primary:hover { background: rgba(0,255,240,0.12); }
+  .btn-ghost {
+    color: #ff2fd6; border: 1px solid #ff2fd6;
+    box-shadow: 0 0 15px rgba(255,47,214,0.3), inset 0 0 15px rgba(255,47,214,0.08);
+  }
+  .btn-ghost:hover { background: rgba(255,47,214,0.1); }
+  .card {
+    max-width: 440px; margin: 4rem auto 0; padding: 2rem;
+    background: #12121e;
+    border: 1px solid rgba(255,47,214,0.35);
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(255,47,214,0.15);
+  }
+  .tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #ff2fd6;
+    border: 1px solid rgba(255,47,214,0.5); border-radius: 4px;
+    padding: 0.25rem 0.7rem; margin-bottom: 1rem;
+    text-shadow: 0 0 8px rgba(255,47,214,0.8);
+  }
+  .card h3 { font-size: 1.4rem; margin-bottom: 0.6rem; color: #f0f0ff; }
+  .card p { color: #9090b0; line-height: 1.65; margin-bottom: 1.25rem; }
+  .card a { color: #00fff0; font-weight: 600; text-decoration: none; letter-spacing: 0.5px; }
+  .badge {
+    position: fixed; bottom: 1.25rem; left: 1.25rem;
+    background: #12121e; color: #e8e8f0;
+    border: 1px solid rgba(0,255,240,0.4);
+    padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.85rem;
+  }
+  .badge a { color: #00fff0; }
+</style>
+</head>
+<body>
+  <nav>
+    <span class="logo">STYLE.DEMO</span>
+    <div>
+      <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Design that speaks</h1>
+    <p>Near-black canvas, electric accents, glow instead of shadow. The cyberpunk look for dashboards, dev tools, and games.</p>
+    <a href="#" class="btn btn-primary">Get started</a>
+    <a href="#" class="btn btn-ghost">Learn more</a>
+  </section>
+
+  <div class="card">
+    <span class="tag">Featured</span>
+    <h3>Neon glow</h3>
+    <p>Dark neon UI trades subtlety for atmosphere: cyan and magenta glows, gradient headlines, and panels that feel backlit rather than raised.</p>
+    <a href="#">Read more →</a>
+  </div>
+
+  <div class="badge">🎨 Dark Neon · <a href="/ui-styles/">all styles</a></div>
+</body>
+</html>

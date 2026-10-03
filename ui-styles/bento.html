@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bento Grid — UI Style Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: #f4f4f6;
+    color: #1a1a2e;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+  }
+  .wrapper { max-width: 760px; margin: 0 auto; }
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 2rem;
+  }
+  .logo { font-weight: 800; font-size: 1.1rem; }
+  nav a { color: #6b6b80; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+  nav a:hover { color: #1a1a2e; }
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 110px;
+    gap: 0.9rem;
+  }
+  .tile {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.25rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    overflow: hidden;
+  }
+  .tile-hero {
+    grid-column: span 4; grid-row: span 2;
+    background: linear-gradient(120deg, #6d28d9, #db2777);
+    color: #fff;
+    justify-content: flex-end;
+  }
+  .tile-hero h1 { font-size: 2.1rem; line-height: 1.2; letter-spacing: -0.5px; }
+  .tile-hero p { opacity: 0.85; margin-top: 0.5rem; font-size: 0.95rem; }
+  .tile-wide { grid-column: span 2; }
+  .tile-tall { grid-row: span 2; }
+  .tile-yellow { background: #fef3c7; }
+  .tile-blue { background: #dbeafe; }
+  .tile-pink { background: #fce7f3; }
+  .tile-green { background: #d1fae5; }
+  .tile-dark { background: #1a1a2e; color: #fff; }
+  .tile h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .tile p { font-size: 0.85rem; color: inherit; opacity: 0.7; line-height: 1.5; }
+  .stat { font-size: 2rem; font-weight: 800; letter-spacing: -1px; }
+  .btn {
+    display: inline-block; padding: 0.6rem 1.4rem; border-radius: 50px;
+    background: #1a1a2e; color: #fff; text-decoration: none;
+    font-size: 0.85rem; font-weight: 600; width: fit-content;
+  }
+  .btn:hover { background: #6d28d9; }
+  .badge {
+    position: fixed; bottom: 1.25rem; left: 1.25rem;
+    background: #1a1a2e; color: #fff;
+    padding: 0.5rem 1rem; border-radius: 12px; font-size: 0.85rem;
+  }
+  .badge a { color: #fbbf24; }
+  @media (max-width: 560px) {
+    .bento { grid-template-columns: repeat(2, 1fr); }
+    .tile-hero { grid-column: span 2; }
+    .tile-wide { grid-column: span 2; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      <span class="logo">STYLE.DEMO</span>
+      <div>
+        <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <div class="bento">
+      <div class="tile tile-hero">
+        <div>
+          <h1>Design that speaks</h1>
+          <p>One grid, many cells. The bento layout borrows its name from Japanese lunch boxes.</p>
+        </div>
+      </div>
+
+      <div class="tile tile-yellow tile-wide">
+        <h3>Get started</h3>
+        <a href="#" class="btn">Start now →</a>
+      </div>
+
+      <div class="tile tile-dark tile-tall">
+        <h3>Featured</h3>
+        <div>
+          <p>Bento grids mix tile sizes and colors to create visual rhythm without complex layouts.</p>
+        </div>
+      </div>
+
+      <div class="tile tile-blue">
+        <span class="stat">128+</span>
+        <p>Components</p>
+      </div>
+
+      <div class="tile tile-pink">
+        <span class="stat">4.9★</span>
+        <p>Rating</p>
+      </div>
+
+      <div class="tile tile-green tile-wide">
+        <h3>Learn more</h3>
+        <p>Popularized by Apple keynotes; now a signature of modern SaaS landing pages.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="badge">🎨 Bento Grid · <a href="/ui-styles/">all styles</a></div>
+</body>
+</html>

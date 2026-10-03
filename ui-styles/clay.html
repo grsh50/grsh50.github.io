@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claymorphism — UI Style Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f3edff;
+    color: #3d3654;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+  }
+  .clay {
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow:
+      inset 0 -10px 20px rgba(120, 90, 200, 0.12),
+      inset 0 8px 16px rgba(255,255,255,0.9),
+      0 18px 32px rgba(120, 90, 200, 0.22),
+      0 4px 8px rgba(120, 90, 200, 0.12);
+  }
+  nav {
+    max-width: 740px; margin: 0 auto 3.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.75rem;
+  }
+  .logo { font-weight: 800; font-size: 1.1rem; color: #6c5ce7; }
+  nav a { color: #8a82a8; text-decoration: none; margin-left: 1.5rem; font-size: 0.92rem; font-weight: 600; }
+  nav a:hover { color: #6c5ce7; }
+  .hero { max-width: 740px; margin: 0 auto; text-align: center; }
+  .hero h1 { font-size: 2.9rem; font-weight: 800; letter-spacing: -1px; line-height: 1.15; margin-bottom: 1rem; color: #3d3654; }
+  .hero p { font-size: 1.1rem; color: #8a82a8; margin-bottom: 2.5rem; }
+  .btn {
+    display: inline-block; padding: 0.95rem 2.2rem; border-radius: 50px;
+    text-decoration: none; font-weight: 700; font-size: 0.95rem; margin: 0 0.5rem;
+    transition: transform 0.15s;
+  }
+  .btn:hover { transform: translateY(-2px) scale(1.02); }
+  .btn-primary { background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: #fff; box-shadow: 0 10px 20px rgba(108,92,231,0.35); }
+  .btn-soft { background: #ffe3ec; color: #e0568a; box-shadow: 0 10px 20px rgba(224,86,138,0.25); }
+  .card {
+    max-width: 430px; margin: 3.5rem auto 0; padding: 2rem;
+  }
+  .tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 700;
+    background: #e3fff4; color: #1eae8a;
+    padding: 0.35rem 0.9rem; border-radius: 50px; margin-bottom: 1rem;
+  }
+  .card h3 { font-size: 1.35rem; margin-bottom: 0.6rem; }
+  .card p { color: #8a82a8; line-height: 1.65; margin-bottom: 1.25rem; }
+  .card a { color: #6c5ce7; font-weight: 700; text-decoration: none; }
+  .badge {
+    position: fixed; bottom: 1.25rem; left: 1.25rem;
+    background: #fff; color: #3d3654;
+    padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+    box-shadow: 0 8px 16px rgba(120,90,200,0.2);
+  }
+  .badge a { color: #6c5ce7; }
+</style>
+</head>
+<body>
+  <nav class="clay">
+    <span class="logo">STYLE.DEMO</span>
+    <div>
+      <a href="#">Overview</a><a href="#">Work</a><a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Design that speaks</h1>
+    <p>Soft, puffy, plasticine-like surfaces in pastel colors. Claymorphism feels friendly and toy-like.</p>
+    <a href="#" class="btn btn-primary">Get started</a>
+    <a href="#" class="btn btn-soft">Learn more</a>
+  </section>
+
+  <div class="card clay">
+    <span class="tag">Featured</span>
+    <h3>Soft surfaces</h3>
+    <p>Claymorphism combines big border radii, pastel palettes, and dual inner/outer shadows to make elements look like squishy clay.</p>
+    <a href="#">Read more →</a>
+  </div>
+
+  <div class="badge">🎨 Claymorphism · <a href="/ui-styles/">all styles</a></div>
+</body>
+</html>
