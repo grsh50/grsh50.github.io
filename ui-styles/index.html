@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Style Gallery — trebuh's blog</title>
+  <meta name="description" content="The same components rendered in seven different UI styles.">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .style-grid { list-style: none; margin: 0; padding: 0; }
+    .style-grid li {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: baseline; gap: 1.25rem; flex-wrap: wrap;
+    }
+    .style-grid h2 { margin: 0; font-size: 1.2rem; min-width: 12rem; }
+    .style-grid h2 a { color: var(--text); text-decoration: none; }
+    .style-grid h2 a:hover { color: var(--accent); }
+    .style-grid p { margin: 0; color: var(--muted); flex: 1; min-width: 16rem; }
+    .swatch {
+      display: inline-block; width: 14px; height: 14px; border-radius: 4px;
+      margin-right: 0.5rem; vertical-align: -2px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="/">trebuh's blog</a>
+      <nav class="site-nav">
+        <a href="/">Posts</a>
+        <a href="/about.html">About</a>
+        <a href="https://github.com/grsh50" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>UI Style Gallery</h1>
+    <p class="intro" style="margin-bottom:2rem">The same components — a nav bar, a hero, buttons, and a card — rendered in seven different UI styles. Open them side by side to feel the difference.</p>
+
+    <ul class="style-grid">
+      <li>
+        <h2><span class="swatch" style="background:linear-gradient(135deg,#667eea,#f093fb)"></span><a href="/ui-styles/glassmorphism.html">Glassmorphism</a></h2>
+        <p>Frosted glass panels, backdrop blur, vivid gradients underneath.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:#ffde59;border:2px solid #0f0f0f"></span><a href="/ui-styles/neubrutalism.html">Neubrutalism</a></h2>
+        <p>Thick black borders, hard offset shadows, raw high-contrast colors.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:#3f51b5"></span><a href="/ui-styles/material.html">Material Design</a></h2>
+        <p>Google's language: elevation through shadow, bold accent colors.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:#e63946"></span><a href="/ui-styles/minimal.html">Minimal / Swiss</a></h2>
+        <p>Typography-driven, generous white space, one accent color.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:#0a0a12;box-shadow:0 0 6px #00fff0"></span><a href="/ui-styles/dark-neon.html">Dark Neon</a></h2>
+        <p>Near-black canvas, cyan/magenta glow, gradient headlines.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:linear-gradient(120deg,#6d28d9,#db2777)"></span><a href="/ui-styles/bento.html">Bento Grid</a></h2>
+        <p>Rounded tiles of mixed sizes and colors — the Apple-keynote look.</p>
+      </li>
+      <li>
+        <h2><span class="swatch" style="background:#f3edff;box-shadow:inset 0 -3px 5px rgba(120,90,200,0.3)"></span><a href="/ui-styles/clay.html">Claymorphism</a></h2>
+        <p>Puffy plasticine surfaces, pastel colors, dual inner/outer shadows.</p>
+      </li>
+    </ul>
+
+    <a class="back-link" href="/posts/ui-style-showcase.html">← Read the blog post about this gallery</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built with plain HTML &amp; CSS · Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></p>
+    </div>
+  </footer>
+</body>
+</html>

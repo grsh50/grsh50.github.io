@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A tour of UI styles — trebuh's blog</title>
+  <meta name="description" content="The same components rendered in seven UI styles — an interactive gallery.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="/">trebuh's blog</a>
+      <nav class="site-nav">
+        <a href="/">Posts</a>
+        <a href="/about.html">About</a>
+        <a href="https://github.com/grsh50" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <h1>A tour of UI styles — one page, seven looks</h1>
+      <p class="post-meta">October 3, 2026</p>
+
+      <p>UI design has dialects. Two sites can contain <em>exactly the same components</em> — a nav bar, a headline, two buttons, a card — and feel like they belong to different planets. To make that visible, I built a small interactive gallery: the same layout rendered in seven different styles.</p>
+
+      <h2><a href="/ui-styles/">Open the UI Style Gallery →</a></h2>
+
+      <p>Each demo page is a self-contained HTML file with its own inline CSS. Same content, different skin:</p>
+      <ul>
+        <li><strong>Glassmorphism</strong> — frosted panels floating over gradients; depth created with blur, not shadow.</li>
+        <li><strong>Neubrutalism</strong> — thick black borders, hard offset shadows, raw colors; zero subtlety on purpose.</li>
+        <li><strong>Material Design</strong> — Google's elevation system; surfaces lift off the page via layered shadows.</li>
+        <li><strong>Minimal / Swiss</strong> — typography and white space do all the work; one red accent.</li>
+        <li><strong>Dark Neon</strong> — near-black canvas, glowing cyan/magenta accents; glow replaces shadow.</li>
+        <li><strong>Bento Grid</strong> — rounded tiles of mixed sizes and colors, the Apple-keynote signature.</li>
+        <li><strong>Claymorphism</strong> — puffy, plasticine-like surfaces in pastel colors with dual inner/outer shadows.</li>
+      </ul>
+
+      <h2>Why this is a useful exercise</h2>
+      <p>Styling is surprisingly separable from structure. Every demo shares roughly the same HTML skeleton — the personality comes almost entirely from CSS. That's the whole argument for keeping this blog framework-free: once your markup is clean, reskinning it is a stylesheet away.</p>
+
+      <p>The demos live under <code>/ui-styles/</code> in <a href="https://github.com/grsh50/grsh50.github.io/tree/main/ui-styles" target="_blank" rel="noopener">the repo</a> if you want to study (or steal) the CSS.</p>
+
+      <a class="back-link" href="/">&larr; All posts</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built with plain HTML &amp; CSS · Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></p>
+    </div>
+  </footer>
+</body>
+</html>
